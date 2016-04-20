@@ -3,10 +3,8 @@ require 'httparty'
 require 'json'
 
 SLACK_WEBHOOK = ENV['SLACK_WEBHOOK_URL']
-CHANNEL_NAME = ENV['CHANNEL_NAME']
  
 get '/anon' do
-  return status(403) if params[:channel_name] != CHANNEL_NAME
   postback(params[:text], params[:channel_id])
   status 200
 end
