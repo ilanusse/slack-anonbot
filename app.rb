@@ -13,7 +13,7 @@ def postback(message, channel)
   HTTParty.post(SLACK_WEBHOOK, 
                 body: {
                   "text" => message.to_s,
-                  "username" => "Anon",
+                  "username" => "Anon#{rand(1..40000)}",
                   "channel" => params[:channel_id],
                   "icon_url" => "http://i463.photobucket.com/albums/qq354/coomberta/A_Real_Anon.png"
                 }.to_json,
