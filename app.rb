@@ -10,5 +10,12 @@ get '/anon' do
 end
  
 def postback(message, channel)
-  HTTParty.post(SLACK_WEBHOOK, body: {"text" => message.to_s, "username" => "Anon", "channel" => params[:channel_id]}.to_json, headers: {'content-type' => 'application/json'})
+  HTTParty.post(SLACK_WEBHOOK, 
+                body: {
+                  "text" => message.to_s,
+                  "username" => "Anon",
+                  "channel" => params[:channel_id],
+                  "icon_url" => "http://i463.photobucket.com/albums/qq354/coomberta/A_Real_Anon.png"
+                }.to_json,
+                headers: {'content-type' => 'application/json'})
 end
