@@ -6,6 +6,9 @@ SLACK_WEBHOOK = ENV['SLACK_WEBHOOK_URL']
 CHANNEL_NAME = ENV['CHANNEL_NAME']
 
 get '/anon' do
+  print('HOLIS')
+  print params
+  print(params[:channel_name])
   return status(403) if params[:channel_name] != CHANNEL_NAME
   postback(params[:text], params[:channel_id])
   status 200
