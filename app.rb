@@ -4,7 +4,7 @@ require 'json'
 
 SLACK_WEBHOOK = ENV['SLACK_WEBHOOK_URL']
 CHANNEL_ID = ENV['CHANNEL_ID']
-AVATAR = 'http://i463.photobucket.com/albums/qq354/coomberta/A_Real_Anon.png'
+AVATAR = 'https://emoji.slack-edge.com/T02F6RVFK/colucciopoop/fc0b6316f8a68327.png'
 
 get '/anon' do
   return status(403) if params[:channel_id] != CHANNEL_ID
